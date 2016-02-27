@@ -1,0 +1,14 @@
+{
+	"full_name": "Jeff Wayne",
+	"email": "chishaku@gmail.com",
+	"github_username": "chishaku",
+	"project_name": "",
+	"project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+	"project_short_description": "",
+	"release_date": "2016-01-01",
+	"pypi_username": "{{ cookiecutter.github_username }}",
+	"year": "2016",
+	"version": "0.1.0",
+	"add_cli_entry_point": "y",
+	"use_pypi_deployment_with_travis": "n"
+}
