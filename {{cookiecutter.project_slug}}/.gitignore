@@ -58,8 +58,4 @@ docs/_build/
 # PyBuilder
 target/
 
-# Miscellaneous
-*sublime-project
-.env
-
 

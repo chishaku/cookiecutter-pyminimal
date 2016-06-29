@@ -1,0 +1,26 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"$project_path/env/bin/python",
+				"-u",
+				"$file"
+			],
+			"name": "Python virtualenv",
+			"selector": "source.python"
+		}
+	],
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		},
+		{
+			"follow_symlinks": true,
+			"path": "./{{cookiecutter.project_slug}}"
+		},
+	]
+}
