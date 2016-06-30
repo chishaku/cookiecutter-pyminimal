@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import pip
-from pip.req import parse_requirements
-
 try:
     from setuptools import setup
 except ImportError:
@@ -12,19 +9,11 @@ except ImportError:
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-parsed_requirements = parse_requirements(
-    'requirements/prod.txt',
-    session=pip.download.PipSession()
-)
+requirements = []
 
-parsed_test_requirements = parse_requirements(
-    'requirements/test.txt',
-    session=pip.download.PipSession()
-)
+test_requirements = []
 
-requirements = [str(ir.req) for ir in parsed_requirements]
-test_requirements = [str(tr.req) for tr in parsed_test_requirements]
-
+dependency_links = []
 
 setup(
     name='{{ cookiecutter.project_slug }}',
@@ -41,6 +30,7 @@ setup(
                  '{{ cookiecutter.project_slug }}'},
     include_package_data=True,
     install_requires=requirements,
+    dependency_links=dependency_links,
     entry_points={
         'console_scripts': [
             '{{ cookiecutter.project_slug }} = {{ cookiecutter.project_slug }}.{{ cookiecutter.project_slug }}:cli',
