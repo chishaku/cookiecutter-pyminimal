@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from setuptools import find_packages
 try:
     from setuptools import setup
 except ImportError:
@@ -23,9 +24,7 @@ setup(
     author="{{ cookiecutter.full_name }}",
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
-    packages=[
-        '{{ cookiecutter.project_slug }}',
-    ],
+    packages=find_packages(),
     package_dir={'{{ cookiecutter.project_slug }}':
                  '{{ cookiecutter.project_slug }}'},
     include_package_data=True,
